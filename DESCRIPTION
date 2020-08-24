@@ -11,4 +11,6 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     glue,
-    httr
+    httr,
+    janitor
+RoxygenNote: 7.1.0

@@ -11,11 +11,14 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(comexbr)
 ```
 
 # comexbr
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/tomasbarcellos/comexbr.svg?branch=master)](https://travis-ci.org/tomasbarcellos/comexbr)
 <!-- badges: end -->
 
 O objetivo de comexbr é permitir baixar e ler os dados do comércio 
@@ -36,8 +39,8 @@ O primeiro que se pode fazer é o download dos dados:
 
 ```{r download, eval = FALSE}
 library(comexbr)
-download_importacao(2020, "import_2020.csv")
-download_exportacao(2020, "export_2020.csv")
+baixar_importacao(2020, "import_2020.csv")
+baixar_exportacao(2020, "export_2020.csv")
 ```
 
 Essa função retorna `TRUE` para requisições que obtiveram sucesso, 
@@ -45,9 +48,12 @@ e `FALSE` para o caso contrário.
 
 E também sua leitura:
 
-```{r leitura, eval = FALSE}
-read_importacao(2020)
-read_exportacao(2020)
+```{r leitura, warning=FALSE, message=FALSE}
+imp2020 <- ler_comex("import_2020.csv")
+dplyr::glimpse(imp2020)
+
+exp2020 <- ler_comex("export_2020.csv")
+dplyr::glimpse(exp2020)
 ```
 
 Além disso, o pacote contém os dicionários das variáveis utilizadas.
