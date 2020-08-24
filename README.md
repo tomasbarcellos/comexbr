@@ -26,9 +26,12 @@ se pode fazer é o download dos dados:
 
 ``` r
 library(comexbr)
-download_importacao(2020)
-download_exportacao(2020)
+download_importacao(2020, "import_2020.csv")
+download_exportacao(2020, "export_2020.csv")
 ```
+
+Essa função retorna `TRUE` para requisições que obtiveram sucesso, e
+`FALSE` para o caso contrário.
 
 E também sua leitura:
 
