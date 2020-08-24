@@ -58,7 +58,7 @@ dplyr::glimpse(exp2020)
 
 Além disso, o pacote contém os dicionários das variáveis utilizadas.
 
-```{r dicionarios, eval = FALSE}
+```{r dicionarios}
 dplyr::glimpse(comexbr::paises)
 dplyr::glimpse(comexbr::blocos)
 dplyr::glimpse(comexbr::ncm)
